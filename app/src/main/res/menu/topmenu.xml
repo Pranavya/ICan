@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.pranavya.ican.MainActivity">
+    <item
+        android:title="SAVE"
+        android:id="@+id/Save"
+        android:icon="@android:drawable/ic_menu_save"
+        android:orderInCategory="100"
+        android:showAsAction ="always"
+        />
+    <item
+        android:title="REDRAW"
+        android:id="@+id/REDRAW"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        />
+</menu>
