@@ -4,7 +4,7 @@
 
     xmlns:tools="http://schemas.android.com/tools"
 
-    tools:context="com.example.sa.MainActivity" >
+    tools:context="com.pranavya.ican.MainActivity" >
 
     <item
 
@@ -14,7 +14,7 @@
 
         android:orderInCategory="100"
 
-        android:showAsAction="always"
+        app:showAsAction="always"
 
         android:title="SAVE"/>
 
@@ -26,7 +26,7 @@
 
         android:orderInCategory="100"
 
-        android:showAsAction="always"
+        app:showAsAction="always"
 
         android:title="DELETE"/>
 

@@ -8,13 +8,13 @@
         android:id="@+id/Save"
         android:icon="@android:drawable/ic_menu_save"
         android:orderInCategory="100"
-        android:showAsAction ="always"
+        app:showAsAction ="always"
         />
     <item
         android:title="REDRAW"
         android:id="@+id/REDRAW"
         android:icon="@android:drawable/ic_menu_delete"
         android:orderInCategory="100"
-        android:showAsAction="always"
+        app:showAsAction="always"
         />
 </menu>
