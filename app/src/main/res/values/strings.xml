@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">I Can</string>
     <string name="enter_name">Enter Name:</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="enter_new_name">Enter new name:</string>
 
