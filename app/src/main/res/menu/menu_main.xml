@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.pranavya.ican.MainActivity">
+    <item
+        android:id="@+id/action_gestures"
+        android:orderInCategory="100"
+        android:title="Gestures"
+        app:showAsAction="never" />
+</menu>
