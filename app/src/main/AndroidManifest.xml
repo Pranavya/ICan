@@ -66,5 +66,14 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
 
+        <activity android:name=".GestureListActivity"
+            android:label = "Gestures List"
+            />
+        <activity android:name=".SaveGestureActivity"
+            android:label="Save Gestures"/>
+
+        <activity android:name=".GestureActivity"
+            android:label="Speech Gesture"/>
+
     </application>
 </manifest>
