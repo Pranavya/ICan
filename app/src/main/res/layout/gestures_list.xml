@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 
     <ListView
         android:id="@+id/gestures_list"
@@ -13,4 +15,24 @@
         android:layout_gravity="center"
         android:divider="@color/LightGrey"
         android:dividerHeight="1px"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton3"
+            android:layout_width="55dp"
+            android:layout_height="55sp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="280dp"
+            android:clickable="true"
+            android:onClick="addGesture"
+            android:src="@drawable/ic_add_black_24dp"
+            android:tint="@color/white"
+            app:backgroundTint="@color/primaryTextColor"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+    </LinearLayout>
 </LinearLayout>
+
