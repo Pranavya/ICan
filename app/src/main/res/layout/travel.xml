@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pranavya.ican.Travel">
+    tools:context="com.pranavya.ican.Travel">
 
     <EditText
         android:id="@+id/txtInput1"
@@ -19,9 +19,9 @@
         android:id="@+id/glist1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/txtInput"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtInput1" />
 
     <Button
         android:id="@+id/btnSave1"
@@ -39,8 +39,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/btnSave"
-        android:layout_toRightOf="@+id/btnSave"
+        android:layout_toEndOf="@+id/btnSave1"
+        android:layout_toRightOf="@+id/btnSave1"
         android:text="Read" />
 
 </RelativeLayout>
