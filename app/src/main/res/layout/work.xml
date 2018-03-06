@@ -3,44 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.pranavya.ican.Work">
+    tools:context="com.pranavya.ican.Work">
 
     <EditText
         android:id="@+id/txtInput3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="270dp"
+        android:layout_height="95dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:gravity="top"
+        android:gravity="bottom"
         android:hint="Write Something To Save" />
 
     <ListView
         android:id="@+id/glist3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/txtInput3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp" />
+        android:layout_height="450dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnSave3" />
 
     <Button
         android:id="@+id/btnSave3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignLeft="@+id/btnRead3"
+        android:layout_alignStart="@+id/btnRead3"
+        android:layout_below="@+id/btnRead3"
         android:text="Save" />
 
     <Button
         android:id="@+id/btnRead3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_toEndOf="@+id/btnSave3"
-        android:layout_toRightOf="@+id/btnSave3"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_toEndOf="@+id/txtInput3"
+        android:layout_toRightOf="@+id/txtInput3"
         android:text="Read" />
 
 </RelativeLayout>

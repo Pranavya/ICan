@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class GenresList extends Fragment {
-    String[] usedGestures = {"SaveGenres", "Travel", "Work", "Others"};
+    String[] usedGestures = {"Restaurant", "Travel", "Work", "Others"};
 
     @Nullable
     @Override
@@ -31,7 +31,7 @@ public class GenresList extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 if (position == 0) {
-                    Intent i = new Intent(GenresList.this.getActivity(), SaveGenres.class);
+                    Intent i = new Intent(GenresList.this.getActivity(), Restaurant.class);
                     startActivity(i);
                 }
                 else if (position == 1) {

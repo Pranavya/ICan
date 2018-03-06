@@ -3,44 +3,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context="com.pranavya.ican.Restaurant">
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter your text" />
-
-    <ListView
-        android:id="@+id/restaurantlist"
-        android:layout_width="368dp"
-        android:layout_height="393dp"
+        android:id="@+id/txtInput"
+        android:layout_width="270dp"
+        android:layout_height="95dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        android:layout_alignParentTop="true"
+        android:gravity="bottom"
+        android:hint="Write Something To Save" />
 
-    </ListView>
+    <ListView
+        android:id="@+id/glist"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnSave" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/restaurantlist"
-        android:text="save"
-        tools:layout_editor_absoluteX="288dp"
-        tools:layout_editor_absoluteY="462dp" />
+        android:layout_alignLeft="@+id/btnRead"
+        android:layout_alignStart="@+id/btnRead"
+        android:layout_below="@+id/btnRead"
+        android:text="Save" />
 
     <Button
         android:id="@+id/btnRead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/restaurantlist"
-        android:text="read" />
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/txtInput"
+        android:layout_toRightOf="@+id/txtInput"
+        android:text="Read" />
+
 </RelativeLayout>

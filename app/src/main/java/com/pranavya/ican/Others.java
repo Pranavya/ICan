@@ -62,7 +62,7 @@ public class Others extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Others.this, ReadOthersData.class);
                 startActivity(intent);
-                //txtContent.setText(ReadData.ReadFile(SaveGenres.this));
+                //txtContent.setText(ReadData.ReadFile(Restaurant.this));
             }
         });
 

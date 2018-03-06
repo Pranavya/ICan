@@ -14,14 +14,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
-public class SaveGenres extends AppCompatActivity {
+public class Restaurant extends AppCompatActivity {
 
 
     Button btnRead , btnSave;
     EditText txtInput;
-    //TextView txtContent;
-  //  ListView listv;
-
 
     // Storage Permissions variables
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -49,7 +46,7 @@ public class SaveGenres extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.save_genres);
+        setContentView(R.layout.restaurant);
 
         verifyStoragePermissions(this);
         //txtContent = (TextView) findViewById(R.id.txtContent);
@@ -60,9 +57,9 @@ public class SaveGenres extends AppCompatActivity {
         btnRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SaveGenres.this, ReadData.class);
+                Intent intent = new Intent(Restaurant.this, ReadData.class);
                 startActivity(intent);
-                //txtContent.setText(ReadData.ReadFile(SaveGenres.this));
+                //txtContent.setText(ReadData.ReadFile(Restaurant.this));
             }
         });
 
@@ -71,19 +68,20 @@ public class SaveGenres extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (ReadData.saveToFile( txtInput.getText().toString())){
-                    Toast.makeText(SaveGenres.this,"Saved to file",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Restaurant.this,"Saved to file",Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(SaveGenres.this,"Error save file!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Restaurant.this,"Error save file!!!",Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
     }
 
-
-
-
-
-/*
+   /* @Override
+    public void finishActivity(int requestCode) {
+        super.finishActivity(requestCode);
+    }*/
+    /*
     Button btnRead , btnSave;
     EditText txtInput;
     //TextView txtContent;
@@ -126,8 +124,8 @@ public class SaveGenres extends AppCompatActivity {
         btnRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //txtContent.setText(ReadData.ReadFile(SaveGenres.this));
-                Intent intent = new Intent(SaveGenres.this, ReadData.class);
+                //txtContent.setText(ReadData.ReadFile(Restaurant.this));
+                Intent intent = new Intent(Restaurant.this, ReadData.class);
                 startActivity(intent);
             }
         });
@@ -136,7 +134,7 @@ public class SaveGenres extends AppCompatActivity {
         gestureScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SaveGenres.this, SaveGestureActivity.class);
+                Intent intent = new Intent(Restaurant.this, SaveGestureActivity.class);
                 startActivity(intent);
             }
 
@@ -147,9 +145,9 @@ public class SaveGenres extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (ReadData.saveToFile( txtInput.getText().toString())){
-                    Toast.makeText(SaveGenres.this,"Saved to file",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Restaurant.this,"Saved to file",Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(SaveGenres.this,"Error save file!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Restaurant.this,"Error save file!!!",Toast.LENGTH_SHORT).show();
                 }
             }
         });

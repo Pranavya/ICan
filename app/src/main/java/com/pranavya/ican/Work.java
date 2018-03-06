@@ -62,7 +62,7 @@ public class Work extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Work.this, ReadWorkData.class);
                 startActivity(intent);
-                //txtContent.setText(ReadData.ReadFile(SaveGenres.this));
+                //txtContent.setText(ReadData.ReadFile(Restaurant.this));
             }
         });
 

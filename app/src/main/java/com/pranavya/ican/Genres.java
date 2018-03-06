@@ -27,15 +27,13 @@ public class Genres extends Fragment {
        );
 
        listView.setAdapter(listViewAdapter);
-
-
        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> parent, View view,
                                    int position, long id) {
                String genre = usedGestures[position];
                if (genre == "Restaurant") {
-                   Intent i = new Intent(Genres.this.getActivity(), SaveGenres.class);
+                   Intent i = new Intent(Genres.this.getActivity(), Restaurant.class);
                    startActivity(i);
                }
                else if (genre == "Travel") {
@@ -52,47 +50,6 @@ public class Genres extends Fragment {
                }
            }
        });
-
-
-       return view;        //return inflater.inflate(R.layout.fused, container, false);
+       return view;
    }
-
-
-/*        View view = inflater.inflate(R.layout.genres, container, false);
-
-        listView = (ListView) view.findViewById(R.id.genlist);
-        ArrayAdapter<String> listViewAdapter;
-        listViewAdapter = new ArrayAdapter<String> (
-                getActivity(),android.R.layout.simple_list_item_1,usedGestures
-        );
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                String genre = usedGestures[position];
-                if (genre == "SaveGenres") {
-                    Intent i = new Intent(Genres.this.getActivity(), SaveGenres.class);
-                    startActivity(i);
-                }
-                else if (genre == "Travel") {
-                    Intent i = new Intent(Genres.this.getActivity(), Travel.class);
-                    startActivity(i);
-                }
-                else if (genre == "Work") {
-                    Intent i = new Intent(Genres.this.getActivity(), Work.class);
-                    startActivity(i);
-                }
-                else {
-                    Intent i = new Intent(Genres.this.getActivity(), Others.class);
-                    startActivity(i);
-                }
-            }
-        });
-        listView.setAdapter(listViewAdapter);
-        return view;
-
-
-    }*/
-
 }
