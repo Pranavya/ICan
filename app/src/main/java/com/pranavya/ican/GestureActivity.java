@@ -84,7 +84,7 @@ public class GestureActivity extends Activity {
 
                 // checking prediction
 
-                if (prediction.score >5.0) {
+                if (prediction.score >1.2) {
                     // and action
                     String toSpeak = prediction.name.toString();
                     t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
