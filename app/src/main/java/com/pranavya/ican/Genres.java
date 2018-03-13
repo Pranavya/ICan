@@ -17,7 +17,7 @@ public class Genres extends Fragment {
    @Nullable
    @Override
    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View view = inflater.inflate(R.layout.fused, container, false);
+       View view = inflater.inflate(R.layout.genres, container, false);
 
        //String[] usedGestures = {"Hello", "How are you?", "Excuse me!!", "Could you like to help me!!", "Sorry"};
        ListView listView = (ListView) view.findViewById(R.id.rUsed);
