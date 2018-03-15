@@ -7,18 +7,13 @@ import android.speech.tts.TextToSpeech;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import java.util.Locale;
-
-
 
 public class Home extends Fragment implements View.OnClickListener{
 
@@ -28,6 +23,9 @@ public class Home extends Fragment implements View.OnClickListener{
 
     private OnFragmentInteractionListener mListener;
 
+    /*
+    This method has the action to be performed for Floating action button
+    */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -61,10 +59,13 @@ public class Home extends Fragment implements View.OnClickListener{
         }
     }
 
+    /*
+    Instant text-speech convertor
+     */
     @Override
     public void onClick(View view) {
         String toSpeak = ed1.getText().toString();
-        String error = "Write text to speak";
+        String error = getString(R.string.err_msg);
         if(toSpeak.trim().isEmpty()) {
             Toast.makeText(getActivity().getApplicationContext(),error,Toast.LENGTH_SHORT).show();
         } else {

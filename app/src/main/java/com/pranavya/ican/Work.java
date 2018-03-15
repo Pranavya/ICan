@@ -45,9 +45,7 @@ public class Work extends AppCompatActivity {
         setContentView(R.layout.work);
 
         verifyStoragePermissions(this);
-        //txtContent = (TextView) findViewById(R.id.txtContent);
         txtInput = (EditText) findViewById(R.id.txtInput3);
-//        listv = (ListView) findViewById(R.id.genres_list);
 
         btnRead = (Button) findViewById(R.id.btnRead3);
         btnRead.setOnClickListener(new View.OnClickListener() {
@@ -55,22 +53,22 @@ public class Work extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Work.this, ReadWorkData.class);
                 startActivity(intent);
-                //txtContent.setText(ReadData.ReadFile(Restaurant.this));
             }
         });
 
         btnSave = (Button) findViewById(R.id.btnSave3);
+        final String sf = getString(R.string.save_to_file);
+        final String esf = getString(R.string.error_to_save);
+
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ReadWorkData.saveToFile( txtInput.getText().toString())){
-                    Toast.makeText(Work.this,"Saved to file",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Work.this,sf,Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(Work.this,"Error save file!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Work.this,esf,Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
-
-
 }

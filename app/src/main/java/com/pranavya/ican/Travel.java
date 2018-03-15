@@ -12,17 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * Created by Bindu on 2/27/2018.
- */
-
 public class Travel extends AppCompatActivity {
 
     Button btnRead , btnSave;
     EditText txtInput;
-    //TextView txtContent;
-    //  ListView listv;
-
 
     // Storage Permissions variables
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -53,28 +46,27 @@ public class Travel extends AppCompatActivity {
         setContentView(R.layout.travel);
 
         verifyStoragePermissions(this);
-        //txtContent = (TextView) findViewById(R.id.txtContent);
-        txtInput = (EditText) findViewById(R.id.txtInput1);
-//        listv = (ListView) findViewById(R.id.genres_list);
 
+        txtInput = (EditText) findViewById(R.id.txtInput1);
         btnRead = (Button) findViewById(R.id.btnRead1);
         btnRead.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Travel.this, ReadTravelData.class);
                 startActivity(intent);
-                //txtContent.setText(ReadData.ReadFile(Restaurant.this));
             }
         });
 
         btnSave = (Button) findViewById(R.id.btnSave1);
+        final String sf = getString(R.string.save_to_file);
+        final String esf = getString(R.string.error_to_save);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ReadTravelData.saveToFile( txtInput.getText().toString())){
-                    Toast.makeText(Travel.this,"Saved to file",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Travel.this,sf,Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(Travel.this,"Error save file!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Travel.this,esf,Toast.LENGTH_SHORT).show();
                 }
             }
         });

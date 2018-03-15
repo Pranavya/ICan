@@ -79,6 +79,10 @@ public class ReadWorkData extends AppCompatActivity  {
         return  false;
     }
 
+    /*
+    Displaying the items in a list and on clicking on list item that text is converted to speech
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

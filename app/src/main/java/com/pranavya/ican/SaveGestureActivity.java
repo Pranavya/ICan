@@ -73,6 +73,9 @@ public class SaveGestureActivity extends AppCompatActivity {
         return true;
     }
 
+    /*
+    Creating options menu
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -86,97 +89,51 @@ public class SaveGestureActivity extends AppCompatActivity {
                 } else{
                     showToast(getString(R.string.no_gesture));
                 }
-              //  String pattern = "mm ss";
-
         }
         return super.onOptionsItemSelected(item);
     }
 
+    /*
+    Get the name corresponding to the gesture
+     */
     private void getName() {
-
         AlertDialog.Builder namePopup = new AlertDialog.Builder(this);
-
         namePopup.setTitle(getString(R.string.enter_name));
-
-        //namePopup.setMessage(R.string.enter_name);
-
-
-
-
-
         final EditText nameField = new EditText(this);
-
         namePopup.setView(nameField);
-
         namePopup.setPositiveButton(R.string.save, new DialogInterface.OnClickListener() {
 
             @Override
 
             public void onClick(DialogInterface dialogInterface, int i) {
-
-                //db.updateExistingMeasurement(measurement);
-
                 if (!nameField.getText().toString().matches("")) {
-
                     mGesturename = nameField.getText().toString();
-
                     saveGesture();
-
                 } else {
-
                     getName();  //TODO : set name field with old name string user added
-
                     showToast(getString(R.string.invalid_name));
-
                 }
-
-                //return;
-
             }
 
         });
-
         namePopup.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
 
             @Override
 
             public void onClick(DialogInterface dialogInterface, int i) {
-
                 mGesturename = "";
-
                 return;
-
             }
 
         });
-
-
-
         namePopup.show();
-
-
-
     }
-
-
-
-
 
     private void showToast(String string){
         Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
     }
 
-
-
     private void saveGesture() {
-
-        // if(!mGesturename.matches("")) {
-
-        //gLib = GestureLibraries.fromFile(getExternalFilesDir(null) + "/" + "gesture.txt");
-
-        //gLib.load();
-
-        //TODO: check kar k same naam valu gesture che k nai
 
         gLib.addGesture(mGesturename, mCurrentGesture);
         if (!gLib.save()) {
@@ -185,11 +142,12 @@ public class SaveGestureActivity extends AppCompatActivity {
             showToast(getString(R.string.gesture_saved) + getExternalFilesDir(null) + "/gesture.txt");
             Intent i = new Intent(SaveGestureActivity.this, GestureListActivity.class);
             startActivity(i);
-
         }
-        // }
     }
 
+    /*
+    Clear screen
+     */
     private void resetEverything(){
         mGestureDrawn = false;
         mCurrentGesture = null;

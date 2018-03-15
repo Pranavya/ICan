@@ -2,10 +2,6 @@ package com.pranavya.ican;
 
 import android.gesture.Gesture;
 
-/**
- * Created by NAVYA on 26-02-2018.
- */
-
 public class GestureHolder {
     private Gesture gesture;
     private String gestureName;

@@ -12,16 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * Created by Bindu on 2/27/2018.
- */
-
 public class Others extends AppCompatActivity {
     Button btnRead , btnSave;
     EditText txtInput;
-    //TextView txtContent;
-    //  ListView listv;
-
 
     // Storage Permissions variables
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
@@ -46,15 +39,16 @@ public class Others extends AppCompatActivity {
         }
     }
 
+    /*
+    Evaluating permissions and read/save text to file
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.others);
 
         verifyStoragePermissions(this);
-        //txtContent = (TextView) findViewById(R.id.txtContent);
         txtInput = (EditText) findViewById(R.id.txtInput2);
-//        listv = (ListView) findViewById(R.id.genres_list);
 
         btnRead = (Button) findViewById(R.id.btnRead2);
         btnRead.setOnClickListener(new View.OnClickListener() {
@@ -62,18 +56,19 @@ public class Others extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Others.this, ReadOthersData.class);
                 startActivity(intent);
-                //txtContent.setText(ReadData.ReadFile(Restaurant.this));
             }
         });
 
         btnSave = (Button) findViewById(R.id.btnSave2);
+        final String s = getString(R.string.save_to_file);
+        final String e = getString(R.string.err_msg);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (ReadOthersData.saveToFile( txtInput.getText().toString())){
-                    Toast.makeText(Others.this,"Saved to file",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Others.this,s,Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(Others.this,"Error save file!!!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Others.this,e,Toast.LENGTH_SHORT).show();
                 }
             }
         });

@@ -62,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /*
+    Mapping fragments with their respective pages
+     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {

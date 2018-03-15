@@ -13,14 +13,14 @@ import android.widget.ListView;
 
 public class Genres extends Fragment {
     String[] usedGestures = {"Restaurant", "Travel", "Work", "Others"};
-   // ListView listView;
+    /*
+    The method is written for displaying genres list.
+     */
    @Nullable
    @Override
    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.genres, container, false);
-
-       //String[] usedGestures = {"Hello", "How are you?", "Excuse me!!", "Could you like to help me!!", "Sorry"};
-       ListView listView = (ListView) view.findViewById(R.id.rUsed);
+       ListView listView = (ListView) view.findViewById(R.id.rUsed); //genres list initialization
 
        ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String> (
                getActivity(),android.R.layout.simple_list_item_1,usedGestures

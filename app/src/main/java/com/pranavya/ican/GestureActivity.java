@@ -20,16 +20,15 @@ import java.util.Locale;
 public class GestureActivity extends Activity {
 
     private GestureLibrary gLib;
-
     private static final String TAG = "GestureActivity";
     TextToSpeech t1;
 
+    /*
+    In this method Type of language is set
+     */
     @Override
-
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.test_gesture);
         t1 = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
@@ -39,29 +38,18 @@ public class GestureActivity extends Activity {
                 }
             }
         });
-
         openOptionsMenu();
-
-        gLib = GestureLibraries.fromFile(getExternalFilesDir(null) + "/" + "gesture.txt");
-
+        gLib = GestureLibraries.fromFile(getExternalFilesDir(null) + "/" + "gesture.txt"); //retrieve saved gestures from storage
         gLib.load();
-
-
-
         GestureOverlayView gestures = (GestureOverlayView) findViewById(R.id.gestures);
-
         gestures.addOnGesturePerformedListener(handleGestureListener);
-
         gestures.setGestureStrokeAngleThreshold(90.0f);
-
     }
 
 
-
-    /**
-
-     * our gesture listener
-
+    /*
+    In this method the text that is saved for particular gesture is converted to speech
+    Gesture is recognized using prediction score
      */
 
     private OnGesturePerformedListener handleGestureListener = new OnGesturePerformedListener() {
@@ -71,43 +59,26 @@ public class GestureActivity extends Activity {
         public void onGesturePerformed(GestureOverlayView gestureView,
 
                                        Gesture gesture) {
-
-
-
             ArrayList<Prediction> predictions = gLib.recognize(gesture);
-
             Log.d(TAG, "recognize");
-            // one prediction needed
-
+            String ag = getString(R.string.agr); // one prediction needed
             if (predictions.size() > 0) {
-
-                Prediction prediction = predictions.get(0);
-
-                // checking prediction
-
+                Prediction prediction = predictions.get(0); // checking prediction
                 if (prediction.score >1.2) {
-                    // and action
-                    String toSpeak = prediction.name.toString();
-                   // t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null)
+                     String toSpeak = prediction.name.toString(); //get that string and convert to speech
                      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                          t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH,null,null);
                      } else {
                          t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
                      }
-
                     Toast.makeText(GestureActivity.this, prediction.name,
-
                             Toast.LENGTH_SHORT).show();
-
                 }
                 else{
-                    Toast.makeText(getBaseContext(), "Add Gesture to recognize", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), ag, Toast.LENGTH_SHORT).show();
                 }
-
             }
-
         }
 
     };
-
 }

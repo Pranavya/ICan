@@ -31,30 +31,22 @@ public class GestureListActivity extends AppCompatActivity {
     private GestureAdapter mGestureAdapter;
     private GestureLibrary gLib;
     private long backPressedTime;
-    //private ImageView mMenuItemView;
 
+    /*
+    Displaying all the gestures in a list
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gestures_list);
         Log.d(TAG, getApplicationInfo().dataDir);
-        /*FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.floatingActionButton3);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(GestureListActivity.this, SaveGestureActivity.class);
-                startActivity(i);
-            }
-        });*/
+
         mGestureListView = (ListView) findViewById((R.id.gestures_list));
         mGestureList = new ArrayList<GestureHolder>();
-       // showToast("Add Gestures to view");
         list();
         mGestureAdapter = new GestureAdapter(mGestureList, GestureListActivity.this);
         mGestureListView.setLongClickable(true);
         mGestureListView.setAdapter(mGestureAdapter);
-        // displays the popup context top_menu to either deleteor resend measurement
-
         registerForContextMenu(mGestureListView);
     }
 
@@ -62,6 +54,10 @@ public class GestureListActivity extends AppCompatActivity {
         Intent i = new Intent(GestureListActivity.this, SaveGestureActivity.class);
         startActivity(i);
     }
+
+    /*
+    This method redirects you to the gestures list page
+     */
     @Override
     public void onResume(){
         super.onResume();
@@ -79,6 +75,9 @@ public class GestureListActivity extends AppCompatActivity {
         registerForContextMenu(mGestureListView);
     }
 
+    /*
+    Retrieve the data from file which is in storage and add all the items to a list
+     */
 
     private void list() {
         try {
@@ -107,9 +106,11 @@ public class GestureListActivity extends AppCompatActivity {
         }
     }
 
+    /*
+    Generates a pop-up menu so that you can enter and save your text for a particular gesture
+     */
+
     public void populateMenu(View view){
-        //ImageView idView = (ImageView) view.findViewById(R.id.gesture_id);
-        //Log.d(TAG, "ha ha" + idView.getText().toString());
         LinearLayout vwParentRow = (LinearLayout)view.getParent().getParent();
         TextView tv = (TextView)vwParentRow.findViewById(R.id.gesture_name_ref);
         mCurrentGestureName = tv.getText().toString();
@@ -125,6 +126,9 @@ public class GestureListActivity extends AppCompatActivity {
         onResume();
     }
 
+    /*
+    Rename the saved gesture text with other text
+     */
 
     public void renameButtonClick(MenuItem item){
         AlertDialog.Builder namePopup = new AlertDialog.Builder(this);
@@ -141,8 +145,9 @@ public class GestureListActivity extends AppCompatActivity {
                     name = nameField.getText().toString();
                     saveGesture();
                 } else {
+                    String n = getString(R.string.vn);
                     renameButtonClick(null);  //TODO : validation
-                    showToast(getString(R.string.invalid_name));
+                    showToast(n);
                 }
             }
 
@@ -161,6 +166,9 @@ public class GestureListActivity extends AppCompatActivity {
         namePopup.show();
     }
 
+    /*
+    Saving renamed gestures
+     */
     private void saveGesture() {
         ArrayList<Gesture> list = gLib.getGestures(mCurrentGestureName);
         if (list.size() > 0) {

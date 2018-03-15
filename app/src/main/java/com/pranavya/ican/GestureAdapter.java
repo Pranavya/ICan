@@ -14,17 +14,23 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class GestureAdapter extends ArrayAdapter<GestureHolder> {
     private static List<GestureHolder> mGestureList;
     private Context mContext;
 
+    /*
+    This method stores all the gestures in adapter
+     */
     public GestureAdapter(ArrayList<GestureHolder> gestureList, Context context) {
         super(context, R.layout.gestures_list, gestureList);
         this.mGestureList = gestureList;
         this.mContext = context;
     }
 
+    /*
+    Stores all the gestures in list
+    i.e., gesture image and corresponding text
+     */
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
         GestureViewHolder holder = new GestureViewHolder();
@@ -55,7 +61,6 @@ public class GestureAdapter extends ArrayAdapter<GestureHolder> {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        //holder.gestureImage.setImageResource(R.drawable.ic_launcher);
         return v;
     }
 
@@ -65,5 +70,4 @@ public class GestureAdapter extends ArrayAdapter<GestureHolder> {
         public ImageView gestureImage;
         public TextView gestureNameRef;
     }
-
 }
