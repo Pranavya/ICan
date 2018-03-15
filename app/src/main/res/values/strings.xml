@@ -2,35 +2,26 @@
     <string name="app_name">I Can</string>
     <string name="enter_name">Enter Name:</string>
     <string name="section_format">Hello World from section: %1$d</string>
-
     <string name="enter_new_name">Enter new name:</string>
-
     <string name="save_gesture">Save Gesture</string>
-
     <string name="save">Save</string>
-
     <string name="cancel">Cancel</string>
-
     <string name="invalid_name">Enter valid name</string>
-
     <string name="gesture_saved"> Saved successfully to : </string>
-
     <string name="no_gesture">Please draw gesture first!</string>
-
     <string name="rename">Rename</string>
-
     <string name="delete">Delete</string>
-
     <string name="add_gesture_button">Add</string>
-
     <string name="test_gesture_button">Test</string>
-
     <string name="cannot_load_library">cannot load gesture library</string>
-
     <string name="test_gesture_activity_label">Test Gesture</string>
-
     <string name="draw_a_gesture">Draw a gesture that has been saved</string>
     <string name="tab_text_1">HOME</string>
     <string name="tab_text_2">GENRES</string>
     <string name="tab_text_3">GESTURES</string>
+    <string name="err_msg">Write text to speak</string>
+    <string name="save_to_file">Saved to file</string>
+    <string name="error_to_save">Error in saving to file</string>
+    <string name="agr">Add Gesture to recognise</string>
+    <string name="vn">Enter a valid name</string>
 </resources>
