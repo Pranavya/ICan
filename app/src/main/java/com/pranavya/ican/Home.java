@@ -65,10 +65,9 @@ public class Home extends Fragment implements View.OnClickListener{
     public void onClick(View view) {
         String toSpeak = ed1.getText().toString();
         String error = "Write text to speak";
-        if(toSpeak.isEmpty()){
+        if(toSpeak.trim().isEmpty()) {
             Toast.makeText(getActivity().getApplicationContext(),error,Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             Toast.makeText(getActivity().getApplicationContext(), toSpeak, Toast.LENGTH_SHORT).show();
             t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
         }
