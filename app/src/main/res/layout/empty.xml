@@ -22,7 +22,7 @@
         android:layout_width="55dp"
         android:layout_height="55sp"
         android:layout_marginBottom="16dp"
-        android:layout_marginLeft="280dp"
+        android:layout_marginLeft="312dp"
         android:clickable="true"
         android:src="@drawable/ic_add_black_24dp"
         android:tint="@color/white"
