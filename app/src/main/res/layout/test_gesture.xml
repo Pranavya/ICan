@@ -8,10 +8,11 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/draw_a_gesture"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:fontFamily="cursive"
         android:gravity="center"
-        />
+        android:text="@string/draw_a_gesture"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/Black" />
 
     <android.gesture.GestureOverlayView
         android:id="@+id/gestures"
