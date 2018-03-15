@@ -74,5 +74,9 @@
         <activity android:name=".GestureActivity"
             android:label="Speech Gesture"/>
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 </manifest>
