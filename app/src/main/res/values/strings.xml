@@ -13,7 +13,7 @@
 
     <string name="invalid_name">Enter valid name</string>
 
-    <string name="gesture_saved"> saved successfully to : </string>
+    <string name="gesture_saved"> Saved successfully to : </string>
 
     <string name="no_gesture">Please draw gesture first!</string>
 
@@ -29,7 +29,7 @@
 
     <string name="test_gesture_activity_label">Test Gesture</string>
 
-    <string name="draw_a_gesture">Draw a gesture, I will try to recognize!</string>
+    <string name="draw_a_gesture">Draw a gesture that has been saved</string>
     <string name="tab_text_1">HOME</string>
     <string name="tab_text_2">GENRES</string>
     <string name="tab_text_3">GESTURES</string>
