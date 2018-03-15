@@ -17,30 +17,31 @@
         android:layout_alignParentTop="true"
         android:width="@android:dimen/thumbnail_width"
         android:ems="10"
+        android:fontFamily="@font/berkshire_swash"
+        android:gravity="bottom"
         android:hint="Enter Your Text"
         android:inputType="textMultiLine"
         android:selectAllOnFocus="false"
-        android:gravity="bottom"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:visibility="visible" />
 
 
     <ImageButton
         android:id="@+id/imageButton"
-        style="@android:style/Widget.Holo.Light.CalendarView"
+        style="@android:style/Widget.Holo.ImageButton"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_below="@+id/editText2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="67dp"
-        android:tint="@color/Black"
         android:background="@color/GhostWhite"
-        android:src="@android:drawable/ic_lock_silent_mode_off" />
+        android:src="@android:drawable/ic_lock_silent_mode_off"
+        android:tint="@color/Black" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/imageButton"
@@ -48,9 +49,10 @@
         android:layout_marginEnd="22dp"
         android:layout_marginRight="22dp"
         android:layout_marginTop="50dp"
-        android:src="@drawable/ic_touch_app_black_24dp"
+        android:src="@drawable/ic_gesture_black_24dp"
         android:tint="@color/LemonChiffon"
-        app:backgroundTint="@color/primaryTextColor" />
+        app:backgroundTint="@color/primaryTextColor"
+        app:fabSize="normal" />
 
 
 </RelativeLayout>
