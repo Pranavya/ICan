@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="@string/draw_a_gesture"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:gravity="center"
         />
 
     <android.gesture.GestureOverlayView
