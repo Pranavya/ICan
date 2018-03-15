@@ -12,7 +12,7 @@
         android:layout_weight="1.0"
         android:fadeEnabled="false"
         android:fadeOffset="1000000"
-        android:gestureColor="@color/Aquamarine"
+        android:gestureColor="@color/Black"
         android:gestureStrokeType="multiple"/>
 
 </LinearLayout>
