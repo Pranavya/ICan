@@ -12,16 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-/**
- * Created by Bindu on 2/27/2018.
- */
-
 public class Work extends AppCompatActivity {
     Button btnRead , btnSave;
     EditText txtInput;
-    //TextView txtContent;
-    //  ListView listv;
-
 
     // Storage Permissions variables
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
