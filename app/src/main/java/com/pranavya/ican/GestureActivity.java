@@ -7,6 +7,7 @@ import android.gesture.GestureLibrary;
 import android.gesture.GestureOverlayView;
 import android.gesture.GestureOverlayView.OnGesturePerformedListener;
 import android.gesture.Prediction;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -87,7 +88,12 @@ public class GestureActivity extends Activity {
                 if (prediction.score >1.2) {
                     // and action
                     String toSpeak = prediction.name.toString();
-                    t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                   // t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null)
+                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                         t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH,null,null);
+                     } else {
+                         t1.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null);
+                     }
 
                     Toast.makeText(GestureActivity.this, prediction.name,
 
