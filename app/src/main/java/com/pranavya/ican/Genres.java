@@ -32,21 +32,20 @@ public class Genres extends Fragment {
            public void onItemClick(AdapterView<?> parent, View view,
                                    int position, long id) {
                String genre = usedGestures[position];
-               if (genre == "Restaurant") {
-                   Intent i = new Intent(Genres.this.getActivity(), Restaurant.class);
-                   startActivity(i);
-               }
-               else if (genre == "Travel") {
-                   Intent i = new Intent(Genres.this.getActivity(), Travel.class);
-                   startActivity(i);
-               }
-               else if (genre == "Work") {
-                   Intent i = new Intent(Genres.this.getActivity(), Work.class);
-                   startActivity(i);
-               }
-               else {
-                   Intent i = new Intent(Genres.this.getActivity(), Others.class);
-                   startActivity(i);
+               switch(genre) {
+                   case "Restaurant":
+                       Intent i = new Intent(Genres.this.getActivity(), Restaurant.class);
+                       startActivity(i);
+                   case "Travel":
+                       Intent i1 = new Intent(Genres.this.getActivity(), Travel.class);
+                       startActivity(i1);
+                   case "Work":
+                       Intent i2 = new Intent(Genres.this.getActivity(), Work.class);
+                       startActivity(i2);
+                   case "Others":
+                       Intent i3 = new Intent(Genres.this.getActivity(), Others.class);
+                       startActivity(i3);
+
                }
            }
        });
