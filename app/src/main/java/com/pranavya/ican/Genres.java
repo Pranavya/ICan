@@ -34,16 +34,19 @@ public class Genres extends Fragment {
                    case "Restaurant":
                        Intent i = new Intent(Genres.this.getActivity(), Restaurant.class);
                        startActivity(i);
+                       break;
                    case "Travel":
                        Intent i1 = new Intent(Genres.this.getActivity(), Travel.class);
                        startActivity(i1);
+                       break;
                    case "Work":
                        Intent i2 = new Intent(Genres.this.getActivity(), Work.class);
                        startActivity(i2);
+                       break;
                    case "Others":
                        Intent i3 = new Intent(Genres.this.getActivity(), Others.class);
                        startActivity(i3);
-
+                       break;
                }
            }
        });
