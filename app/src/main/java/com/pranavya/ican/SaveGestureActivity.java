@@ -85,7 +85,12 @@ public class SaveGestureActivity extends AppCompatActivity {
 
             case R.id.Save:
                 if(mGestureDrawn){
-                    getName();
+                    if(GestureListActivity.gestureCount > 50) {
+                        Toast.makeText(getApplicationContext(), "Limit Exceeded. Delete Few Gestures To Add More" , Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        getName();
+                    }
                 } else{
                     showToast(getString(R.string.no_gesture));
                 }

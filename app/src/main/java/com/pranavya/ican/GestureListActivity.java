@@ -31,6 +31,7 @@ public class GestureListActivity extends AppCompatActivity {
     private GestureAdapter mGestureAdapter;
     private GestureLibrary gLib;
     private long backPressedTime;
+    static int gestureCount;
 
     /*
     Displaying all the gestures in a list
@@ -47,6 +48,8 @@ public class GestureListActivity extends AppCompatActivity {
         mGestureAdapter = new GestureAdapter(mGestureList, GestureListActivity.this);
         mGestureListView.setLongClickable(true);
         mGestureListView.setAdapter(mGestureAdapter);
+        gestureCount = mGestureListView.getAdapter().getCount();
+        Toast.makeText(getApplicationContext(), "Total number of Items are:" + gestureCount , Toast.LENGTH_LONG).show();
         registerForContextMenu(mGestureListView);
     }
 
